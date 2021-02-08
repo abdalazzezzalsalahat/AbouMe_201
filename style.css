@@ -1,0 +1,86 @@
+
+*{
+    font-family: 'Lexend Mega', sans-serif;
+}
+
+body{
+    background-image: url("https://mfiles.alphacoders.com/773/773269.png");
+    color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box{
+    width: 60%;
+    height: 1000px;
+    background-color:#3dc294;
+    box-shadow: black 0 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border-radius: 5px;
+}
+
+.boxHeader{
+    width: 100%;
+    background-image: linear-gradient(to left bottom, #C23D6B, #3dc294);
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.boxbody{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding: 2em;
+}
+
+.btn {
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    background-color: #3dc294; 
+    color: black; 
+    border: 2px solid #C23D6B;
+    border-radius: 5px;
+    position: relative;
+    left: 800px;
+    bottom: 80px;
+}
+
+.btn:hover {
+    background-color: #C23D6B;
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    padding: 20px;
+}
+
+.boxfooter{
+    width: 100%;
+    background-image: linear-gradient(to right top, #C23D6B, #3dc294);
+    border-top: 1px solid black;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    bottom: -200px;
+}
+
+
+
+

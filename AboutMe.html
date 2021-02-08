@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Me Page</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+       
+    </head>
+    <body>
+        <div class="box">
+            <div class="boxHeader">
+                <h2>Welcome in the guessing games <em id="gender"></em><span id="playerName"></span></h2>
+            </div>
+            <div class="boxbody">
+                <div>
+                    <b>Tis page will ask you some quistions </b>
+                </div>
+                <div>
+                    <p>click the button to the left to start the game.</p>
+                    <button type="button" onclick="guessingGame();" class="btn" id="btn">Start</button>
+                </div>
+                <div>
+                    <ul>
+                        <li>Is my name Azooz? <span id="nameGuess"></span></li>
+                        <li>Is my nickName Azooz? <span id="nickNameGuess"></span></li>
+                        <li>Is my age 24? <span id="ageGuess"></span></li>
+                        <li>Is my major Interior-design? <span id="majorGuess"></span></li>
+                        <li>Is my favorate hoppy Swimming? <span id="hoppyGuess"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="boxfooter">
+                <div class="playerName"></div>
+                <div class="mark">your score<h3 id="mark"></h3>/10</div>
+            </div>
+        </div>
+         <script src="./script.JS"></script>
+    </body>
+</html>
