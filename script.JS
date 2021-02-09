@@ -1,5 +1,11 @@
 
 'use strict'
+//
+// How did this go, overall?
+// first the user will get a prompt that asks him about his name, 
+// and another prompt for his gender, which will be writtin in 
+// the begin of the page with a welcome message.
+//
 let Name = prompt("what is your name?");
 let gender = prompt("what is your gender? male, female");
 
@@ -14,13 +20,14 @@ switch (gender.toLowerCase()){
         gender = prompt("what is your gender? male, female");
 }
 
-// if (gender == "male"){
-//     document.getElementById("gender").innerText = "MR. ";
-// }else if(gender == "female"){
-//     document.getElementById("gender").innerHTML = "MRs. ";
-// }else {
-//     gender = prompt("what is your gender? male, female");
-// }
+//
+// then if he want there will be a button on the top right to start the game 
+// if the biutton is clicked it will trigger a function that have 5 prompts 
+// with quistions will appear and they will be marked, 2 marks per quistion. 
+// the marke called score will be shown in the bottom of the page.
+// the correct answers will appear in green color,
+// the wrong answers will appear in red color. 
+//
 
 document.getElementById("playerName").innerHTML = Name;
 
@@ -74,17 +81,29 @@ function guessingGame(){
         document.getElementById("hoppyGuess").innerHTML = " wrong, my favorate hoppy is Swimming.";
         document.getElementById("hoppyGuess").style.color = "#f10e17";
     }
+    alert("Congrats you have aswered " + (score/2) + " questions correctly and got " + score + " / 10");
     document.getElementById("btn").innerText = "Try again";
     document.getElementById("mark").innerHTML = score;
 
 }
 
+//
+// when the user finish the game, the text on the button will change
+// to (Try again), if the user wanted to try again, 
+// the game will start over and the old score will be removed. 
+//
 
 
 
 
+//
+// It took me 2 hours to complete this task, the page design took me 45 minutes 
+// the html structure tooke me 30  minutes and 45 minutes for the JS code.
+//
 
-
+//
+// I thought I will finish it 30 minutes less, but the design took along time.
+//
 
 
 
