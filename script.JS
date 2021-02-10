@@ -1,5 +1,5 @@
 
-'use strict'
+'use strict';
 //
 // How did this go, overall?
 // first the user will get a prompt that asks him about his name, 
@@ -31,9 +31,15 @@ switch (gender.toLowerCase()){
 
 document.getElementById("playerName").innerHTML = Name;
 let score = 0;
+let TVShows = ['The 100'
+            , 'Mr. Robot'
+            , 'Peaky Blinders'
+            , 'Dark'
+            , 'Riverdale'
+            , 'SKAM'
+            , 'CSI'
+            , 'NCIS'];
 function guessingGame(){
-    
-    
 
     guessedName();
 
@@ -45,10 +51,17 @@ function guessingGame(){
 
     guessedHobby();
 
+    GuessedNumber();
+
+    GuessedTVShow();
+
+    TVShowsArray();
+
     alert("Congrats you have aswered " + (score/2) + " questions correctly and got " + score + " / 10");
     document.getElementById("btn").innerText = "Try again";
     document.getElementById("mark").innerHTML = score;
-
+    document.getElementById("TVShowDiv").hidden = false;
+    document.getElementById("footer").hidden = false;
 }
 
 //
@@ -56,9 +69,6 @@ function guessingGame(){
 // to (Try again), if the user wanted to try again, 
 // the game will start over and the old score will be removed. 
 //
-
-
-
 
 //
 // It took me 2 hours to complete this task, the page design took me 45 minutes 
@@ -68,9 +78,6 @@ function guessingGame(){
 //
 // I thought I will finish it 30 minutes less, but the design took along time.
 //
-
-
-
 
 
 function guessedName(){
@@ -84,7 +91,6 @@ function guessedName(){
         document.getElementById("nameGuess").style.color = "#f10e17";
     }
 }
-
 function guessedNickname(){
     let nickNameGuess = prompt("Is my nickName Azooz? yes, no");
     if (nickNameGuess.toLowerCase() == "yes"){
@@ -96,7 +102,6 @@ function guessedNickname(){
         document.getElementById("nickNameGuess").style.color = "#f10e17";
     }
 }
-
 function guessedAge(){
     let ageGuess = prompt("Is my age 24? yes, no");
     if (ageGuess.toLowerCase() == "yes"){
@@ -108,7 +113,6 @@ function guessedAge(){
         document.getElementById("ageGuess").style.color = "#f10e17";
     }
 }
-
 function guessedMajor(){
     let majorGuess = prompt("Is my major Interior-design? yes, no");
     if (majorGuess.toLowerCase() == "no"){
@@ -120,7 +124,6 @@ function guessedMajor(){
         document.getElementById("majorGuess").style.color = "#f10e17";
     }
 }
-
 function guessedHobby(){
     let hoppyGuess = prompt("Is my favorate hoppy Swimming? yes, no");
     if (hoppyGuess.toLowerCase() == "yes"){
@@ -132,4 +135,59 @@ function guessedHobby(){
         document.getElementById("hoppyGuess").style.color = "#f10e17";
     }
 }
-
+function GuessedNumber(){
+    let attempts = 4;
+    while (attempts) {
+        let numberGuess = parseInt(prompt('Im thinking in a number that is between 1 to 10, Guess the number to encrease your score.'));
+        if (numberGuess > 8 && numberGuess < 10) {
+            alert(' Correct, the number was 9 ');
+            document.getElementById("numberGuess").innerHTML = " Correct, The number I was thinking about was 9.";
+            document.getElementById("numberGuess").style.color = "#207d2f";
+            score+=2;
+            break;
+        } else if (numberGuess <= 8) {
+            alert('Your guess was "Too Low", try again');
+        } else {
+            alert('Your guess was "Too High", try again');
+        }
+        attempts-=1 ;
+        if (attempts==0){
+            alert('Sorry, you have no more attempts.');
+            document.getElementById("numberGuess").innerHTML = "Sorry, The correct number 9";
+            document.getElementById("numberGuess").style.color = "#f10e17";
+            break;
+        }
+    }
+}
+function GuessedTVShow(){
+    let attemts = 6;
+    while(attemts){
+        let TVShowGuess = prompt('Guess a TVShow that I have watched, and encrease your score.');
+        if(TVShows.indexOf(TVShowGuess) >= 0){
+            document.getElementById("TVShowGuess").innerHTML = 'Correct, Yeah I have watched that TVShow and it was amazing!';
+            document.getElementById("TVShowGuess").style.color = "#207d2f";
+            score+=2;
+            break;
+        }
+        else {
+            alert('Guess a again, sorry I havent watch that TVShow yet.');
+        }
+        alert("My watch List: 'The 100', 'Mr. Robot', 'Peaky Blinders', 'Dark', 'Riverdale', 'SKAM', 'CSI', 'NCIS'");
+        attemts--;
+        if (attemts == 0){
+            alert('Sorry, you have no more attempts.');
+            document.getElementById("TVShowGuess").innerHTML = 'Wrong,  sorry I havent watch that TVShow yet. My watch List';
+            document.getElementById("TVShowGuess").style.color = "#f10e17";
+            break;
+        }
+    }
+    
+}
+function TVShowsArray() {
+    for (let i=0;i<TVShows.length; i++){
+        let ul = document.getElementById("TVShowslist");
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(TVShows[i]));
+        ul.appendChild(li);
+    }
+}
